@@ -1,2 +1,5 @@
-# web-340
-WEB-340 Node.JS
+# Web 340 Node.js
+
+## Contributors
+* Professor Cristy Cross
+* Tierre Green
