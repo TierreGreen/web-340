@@ -1,0 +1,8 @@
+{
+    "name": "Welcome Homepage",
+    "author": "Tierre Green",
+    "private": true,
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
