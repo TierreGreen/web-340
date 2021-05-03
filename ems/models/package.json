@@ -1,0 +1,11 @@
+{
+    "name": "Mongoose-Schema",
+    "author": "Tierre Green",
+    "private": true,
+    "scripts": {
+        "test": "mongoose"
+    },
+    "dependencies": {
+        "mongoose": "^5.12.7"
+    }
+}
