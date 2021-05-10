@@ -14,6 +14,8 @@ var path = require("path");
 
 var logger = require("morgan");
 
+var helmet = require("helmet");
+
 var app = express();
 
 const mongoose = require('mongoose');
@@ -50,9 +52,20 @@ app.set("view engine", "ejs");
 
 app.use(logger("short"));
 
-app.get("/", function (request, response) {
+app.use(helmet.xssFilter());
 
-    response.render("index", {
+app.get("/", function(req, res){
+
+    res.render("index", {
+
+        message: "XSS Prevention Example"
+    });
+
+});
+
+app.get("/", function (req, res) {
+
+    res.render("index", {
 
         title: "Home page"
 
@@ -61,8 +74,8 @@ app.get("/", function (request, response) {
 });
 
 //get the contact file. 
-app.get('/list', function(request, response){
-    response.render('list',{
+app.get('/list', function(req, res){
+    res.render('list',{
         title: "Employee Records"
     });
 }); 
