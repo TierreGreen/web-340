@@ -11,70 +11,86 @@
     <%- include('header'); -%>
 
     <body class="bg-dark">
-    <%- include('navbar'); -%>
+        <%- include('navbar'); -%>
 
-    <div class="container">
-    <div class="mx-auto text-white"></div>
-        <main role="main" class="mx-auto">
-            <h1 class="text-white mx-auto" style="margin-top: 3rem; text-align: center;">Homepage</h1>
+        <div role="main" class="container">
+
+            <br/><br/>
+
+            <h2><%= message %></h2>
+            <form method="post" action="/process">
+                <div class="form-group">
+                    <label id="txtName">Name: 
+                        <input class="txtName" name="txtName"/>
+                </div>
+                <div class="form-group">
+                    <!-- CSRF token -->
+                    <input class="csrf" value="<%= csrfToken %>" type="hidden">
+                    <button class="btn btn-primary float-right">Submit</button>
+                </div>
+            </form>
+
+            <div class="mx-auto text-white"></div>
+                <main role="main" class="mx-auto">
+                    <h1 class="text-white mx-auto" style="margin-top: 3rem; text-align: center;">Homepage</h1>
+                    
+                    <img src="../pbu1.jpg" style="border: 2px; border-color: black; width: 15%; float: left;" alt="Football Player Breaking Up a Pass">
+                    
+                    <p class="text-white"  style="text-align: center;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Vivamus cursus nisi in eros volutpat, et porttitor leo placerat. 
+                        Class aptent taciti sociosqu ad litora torquent per conubia 
+                        nostra, per inceptos himenaeos. Duis sed pulvinar sapien. 
+                        Quisque viverra nulla et tellus mollis tincidunt. Proin nec 
+                        condimentum urna. Sed eget erat libero. Nulla molestie lobortis placerat. 
+                        Maecenas at convallis metus, ac scelerisque ipsum. Pellentesque 
+                        vel sodales orci. Duis at massa rhoncus, accumsan purus et, faucibus elit. 
+                        Nunc dapibus purus nec viverra finibus.
+                    </p>
+                </main>
+            </div>
             
-            <img src="../pbu1.jpg" style="border: 2px; border-color: black; width: 15%; float: left;" alt="Football Player Breaking Up a Pass">
-            
-            <p class="text-white"  style="text-align: center;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Vivamus cursus nisi in eros volutpat, et porttitor leo placerat. 
-                Class aptent taciti sociosqu ad litora torquent per conubia 
-                nostra, per inceptos himenaeos. Duis sed pulvinar sapien. 
-                Quisque viverra nulla et tellus mollis tincidunt. Proin nec 
-                condimentum urna. Sed eget erat libero. Nulla molestie lobortis placerat. 
-                Maecenas at convallis metus, ac scelerisque ipsum. Pellentesque 
-                vel sodales orci. Duis at massa rhoncus, accumsan purus et, faucibus elit. 
-                Nunc dapibus purus nec viverra finibus.
-            </p>
-        </main>
-    </div>
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-4" style="padding: 0;">
-                <div class="card" id="card-effects-1" style="width: 85%; margin-top: 3rem; box-shadow: 0px 4px 8px 0px rgba(245, 245, 245, 0.445);">
-                    <div class="card-body bg-secondary text-white">
-                        <h5 class="card-title" style="text-align: center;">Sample Card 1</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique feugiat urna eget ultricies. Pellentesque consequat felis scelerisque ante volutpat interdum. Phasellus gravida nunc ac.</p>
-                        <a href="#" class="btn btn-outline-dark">Faux Link</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4" style="padding: 0;">
+                        <div class="card" id="card-effects-1" style="width: 85%; margin-top: 3rem; box-shadow: 0px 4px 8px 0px rgba(245, 245, 245, 0.445);">
+                            <div class="card-body bg-secondary text-white">
+                                <h5 class="card-title" style="text-align: center;">Sample Card 1</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique feugiat urna eget ultricies. Pellentesque consequat felis scelerisque ante volutpat interdum. Phasellus gravida nunc ac.</p>
+                                <a href="#" class="btn btn-outline-dark">Faux Link</a>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="col-4" style="padding: 0;">
+                        <div class="card" id="card-effects-2" style="width: 85%; margin-top: 3rem; box-shadow: 0px 4px 8px 0px rgba(245, 245, 245, 0.445);">
+                            <div class="card-body bg-secondary text-white">
+                                <h5 class="card-title" style="text-align: center;">Sample Card 2</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique feugiat urna eget ultricies. Pellentesque consequat felis scelerisque ante volutpat interdum. Phasellus gravida nunc ac.</p>
+                                <a href="#" class="btn btn-outline-dark" style="margin: auto auto;">Faux Link</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4" style="padding: 0;">
+                        <div class="card" id="card-effects-3" style="width: 85%; margin-top: 3rem; box-shadow: 0px 4px 8px 0px rgba(245, 245, 245, 0.445);">
+                            <div class="card-body bg-secondary text-white">
+                                <h5 class="card-title" style="text-align: center;">Sample Card 3</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique feugiat urna eget ultricies. Pellentesque consequat felis scelerisque ante volutpat interdum. Phasellus gravida nunc ac.</p>
+                                <a href="#" class="btn btn-outline-dark">Faux Link</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="col-4" style="padding: 0;">
-                <div class="card" id="card-effects-2" style="width: 85%; margin-top: 3rem; box-shadow: 0px 4px 8px 0px rgba(245, 245, 245, 0.445);">
-                    <div class="card-body bg-secondary text-white">
-                        <h5 class="card-title" style="text-align: center;">Sample Card 2</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique feugiat urna eget ultricies. Pellentesque consequat felis scelerisque ante volutpat interdum. Phasellus gravida nunc ac.</p>
-                        <a href="#" class="btn btn-outline-dark" style="margin: auto auto;">Faux Link</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4" style="padding: 0;">
-                <div class="card" id="card-effects-3" style="width: 85%; margin-top: 3rem; box-shadow: 0px 4px 8px 0px rgba(245, 245, 245, 0.445);">
-                    <div class="card-body bg-secondary text-white">
-                        <h5 class="card-title" style="text-align: center;">Sample Card 3</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique feugiat urna eget ultricies. Pellentesque consequat felis scelerisque ante volutpat interdum. Phasellus gravida nunc ac.</p>
-                        <a href="#" class="btn btn-outline-dark">Faux Link</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
 
 
 
 
 
-    <%- include('footer'); -%>
+        <%- include('footer'); -%>
     </body>
 </html>

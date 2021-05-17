@@ -31,7 +31,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const mongoDB = "mongodb+srv://TGreen3023:*****@buwebdev-cluster-1.bxuwh.mongodb.net/test?authSource=admin&replicaSet=atlas-7omegc-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+const mongoDB = "mongodb+srv://TGreen3023:Ninja#873225@buwebdev-cluster-1.bxuwh.mongodb.net/EMS?retryWrites=true&w=majority";
 
 mongoose.connect(mongoDB, {
 
@@ -59,12 +59,17 @@ app.set("views", path.resolve(__dirname, "views"));
 
 app.set("view engine", "ejs");
 
+app.set('port', process.env.PORT || 3001);
+
+
 app.use(logger("short"));
 
 app.use(helmet.xssFilter());
 
 app.use(bodyParser.urlencoded({
+
     extended: true
+
 }));
 
 app.use(cookieParser());
@@ -186,8 +191,34 @@ app.get("/list", function(req, res) {
     });
 });
 
+//Individual employee view.
+app.get("/view/:queryName", function(request, response) {
+
+    var queryName = request.params.queryName;
+  
+    Employee.find({'firstName': queryName}, function(error, employees) {
+
+        if (error) throw error;
+
+        if (employees.length > 0) {
+
+            response.render("view", {
+
+                title: 'EMS | View',
+
+                employee: employees
+            })
+
+        } else {
+
+          response.redirect('/list');
+
+        }
+    });
+  });
+
 http.createServer(app).listen(3001, function() {
 
-    console.log("Application started and listening on port 3001!");
+    console.log("Application started and is listening on port 3001!");
 
 });
