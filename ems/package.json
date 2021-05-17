@@ -16,5 +16,9 @@
 
     "scripts": {
         "start": "node app.js"
+    },
+
+    "engines": {
+        "node": "15.12.0"
     }
 }
